@@ -67,13 +67,13 @@ class App extends React.Component {
     }
 
     createUser = async(id) => {
-        let result = await axios.get(`http://localhost:3000/createUser?user_id=${id}`);
+        let result = await axios.get(`http://109.195.67.182:3002/createUser?user_id=${id}`);
         console.log(result.data.user)
         this.setState({balance: result.data.user.balance})
     }
 
     updateUserBalance = async(id) => {
-        let result = await axios.get(`http://localhost:3000/updateUserBalance?user_id=${id}`);
+        let result = await axios.get(`http://109.195.67.182:3002/updateUserBalance?user_id=${id}`);
         this.setState({userAcc: result.data.user})
         this.setState({balance: result.data.user.balance+1})
     }
